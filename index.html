@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            function redirectToDaHood() {
+                try {
+                    const newLocation = `${window.location.origin}/DaHood.lua`;
+                    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+                        console.log(`Redirecting to ${newLocation}`);
+                        window.location.href = newLocation;
+                    } else {
+                        console.warn('Redirection aborted. Current page is not index.html.');
+                    }
+                } catch (error) {
+                    console.error('Error during redirection:', error);
+                }
+            }
+            redirectToDaHood();
+        });
+    </script>
+</head>
+<body>
+    <p>Redirecting to DaHood.lua...</p>
+</body>
+</html>
